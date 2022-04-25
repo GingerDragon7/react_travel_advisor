@@ -9,16 +9,22 @@ import useStyles from './styles.js';
 
 const Map = () => {
   const classes = useStyles();
+  const isMobile = useMediaQuery('(min-width:600px)');
+
+  const coordinates = {lat:0, lng: 0};
+
 
   return (
     <div className={classes.mapContainer}>
     <GoogleMapReact
-      bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_API_KEY }}
-      defaultCenter={coords}
-      center={coords}
+      bootstrapURLKeys={{ key: 'AIzaSyBdJeBQjlV2-rKVSvUiT87hpfCvNWpr60E' }}
+      defaultCenter={coordinates}
+      center={coordinates}
       defaultZoom={14}
       margin={[50, 50, 50, 50]}
-      options={{ disableDefaultUI: true, zoomControl: true, styles: mapStyles }}
+      options={''}
+      onChange={''}
+      onChildClick={''}
 
     >
       </GoogleMapReact>
@@ -26,4 +32,4 @@ const Map = () => {
   )
 }
 
-export default Map
+export default Map;
